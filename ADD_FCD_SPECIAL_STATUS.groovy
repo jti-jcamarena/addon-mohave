@@ -13,7 +13,8 @@ def String memo = "FCD Review Started";
 
 def Where whereCaseSpecialStatus = new Where()
         .addEquals("status", status)
-        .addEquals("case", cse);
+        .addEquals("case", cse)
+        .addIsNull("endDate");
 
 def ArrayList<CaseSpecialStatus> fdcCaseSpecialStatuses = DomainObject.find(CaseSpecialStatus.class, whereCaseSpecialStatus);
 
